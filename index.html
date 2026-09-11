@@ -1,16 +1,13 @@
 <script>
+    let lijst = [];
     function doen(){
-        let lijst = [703, 99, 64, 777];
-
         for(let x = 0; x < lijst.length; x++){
             verwerktgetal(lijst[x])
         }
-
     }
 
     function verwerktgetal(nummer){
         if(nummer % 2 == 0){
-
             document.getElementById("uitkomst").innerHTML += "<div class=\"even\">het getal erbij is "+nummer+"</div>";
         }else{
             document.getElementById("uitkomst").innerHTML += "<div class=\"uneven\">het getal erbij is "+nummer+"</div>";
@@ -22,6 +19,14 @@
             document.getElementById("uitkomst").innerHTML += "getal "+x +" is erbij gekomen<br>"
         }
 
+    }
+    function toevoegen(){
+        let getal = document.getElementById("invoerveld").value;
+        getal = parseInt(getal);
+        lijst.push(getal)  
+        console.log(lijst)  
+        document.getElementById("invoerveld").value="";
+        document.getElementById("invoerveld").focus();    
     }
        
 </script>
@@ -37,9 +42,11 @@
 
 
 
-<button onclick="doen()">Actie</button>
+<button onclick="doen()">Check All Numbers</button>
 
 
+<hr><hr>
+<input id="invoerveld"><button onclick="toevoegen()">voeg toe</button>
 
 
 <div id="uitkomst"></div>
