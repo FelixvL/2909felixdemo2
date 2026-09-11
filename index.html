@@ -1,15 +1,12 @@
 <script>
     function doen(){
+        document.getElementById("uitkomst").style.color = 'black';
         let cijfer1 = document.getElementById("getal1").value;
         cijfer1 = parseInt(cijfer1);
         console.log("message to self", cijfer1);
-        if(cijfer1 <= 0){
-            alert("netagive numbers are nog allowed")
-        }
-        if(cijfer1 > 100){
-//            alert("this number is too high");
+        if(cijfer1 <= 0 || cijfer1 > 100){
             document.getElementById("uitkomst").style.color = 'red';
-            document.getElementById("uitkomst").innerHTML = 'this number is too high';
+            document.getElementById("uitkomst").innerHTML = 'this number is not valid';
         }else{
             document.getElementById("uitkomst").innerHTML = "Het kwadraat is:"+ (cijfer1*cijfer1)
         }
