@@ -1,38 +1,14 @@
 <script>
     function doen(){
-        resetAtStart();
-
-        let cijfer1 = document.getElementById("getal1").value;
-        let cijfer2 = document.getElementById("getal2").value;
-
-
-        cijfer1 = parseInt(cijfer1);
-        cijfer2 = parseInt(cijfer2);
-
-        if(checkrules(cijfer1) || checkrules(cijfer2)){
-            tellItsNotAllowed();
-        }else{
-            document.getElementById("uitkomst").innerHTML = "De getallen optellen is:"+ (cijfer1+cijfer2)
+        for(let x = 0 ; x < 200; x++){
+            document.getElementById("uitkomst").innerHTML += "getal "+x +" is erbij gekomen<br>"
         }
-
     }
- 
- 
-    function checkrules(cijfer1p){
-        return cijfer1p <= 0 || cijfer1p > 100;
-    }
-    function tellItsNotAllowed(){
-            document.getElementById("uitkomst").style.color = 'red';
-            document.getElementById("uitkomst").innerHTML = 'this number is not valid';
-    }
-    function resetAtStart(){
-        document.getElementById("uitkomst").style.color = 'black';
-    }
+       
 </script>
 
 
-Number1: <input id="getal1"><br>
-Number2: <input id="getal2">
+
 
 
 <button onclick="doen()">Actie</button>
