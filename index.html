@@ -3,9 +3,19 @@
         let lijst = [703, 99, 64, 777];
 
         for(let x = 0; x < lijst.length; x++){
-            alert(lijst[x]);
+            verwerktgetal(lijst[x])
         }
 
+    }
+
+    function verwerktgetal(nummer){
+        if(nummer % 2 == 0){
+
+            document.getElementById("uitkomst").innerHTML += "<div class=\"even\">het getal erbij is "+nummer+"</div>";
+        }else{
+            document.getElementById("uitkomst").innerHTML += "<div class=\"uneven\">het getal erbij is "+nummer+"</div>";
+
+        }
     }
     function dotheloop(){
         for(let x = 0 ; x < 20; x++){
@@ -16,7 +26,14 @@
        
 </script>
 
-
+<style>
+    .even{
+        color:red;
+    }
+    .uneven{
+        color:green;
+    }
+</style>
 
 
 
