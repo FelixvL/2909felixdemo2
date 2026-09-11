@@ -1,12 +1,15 @@
 <script>
     function doen(){
-        alert("hij doet het");
+        let cijfer1 = document.getElementById("getal1").value;
+        cijfer1 = parseInt(cijfer1);
+        document.getElementById("uitkomst").innerHTML = "Het kwadraat is:"+ (cijfer1*cijfer1)
+
     }
 </script>
 
 
-Number1: <input><br>
-Number2: <input>
+Number1: <input id="getal1"><br>
+Number2: <input id="getal2">
 
 
 <button onclick="doen()">Actie</button>
@@ -14,4 +17,4 @@ Number2: <input>
 
 
 
-<div></div>
+<div id="uitkomst"></div>
