@@ -2,6 +2,9 @@
     function doen(){
         let cijfer1 = document.getElementById("getal1").value;
         cijfer1 = parseInt(cijfer1);
+        if(cijfer1 <= 0){
+            alert("netagive numbers are nog allowed")
+        }
         document.getElementById("uitkomst").innerHTML = "Het kwadraat is:"+ (cijfer1*cijfer1)
 
     }
