@@ -1,16 +1,32 @@
 <script>
     function doen(){
-        document.getElementById("uitkomst").style.color = 'black';
+        resetAtStart();
+
         let cijfer1 = document.getElementById("getal1").value;
+        let cijfer2 = document.getElementById("getal2").value;
+
+
         cijfer1 = parseInt(cijfer1);
-        console.log("message to self", cijfer1);
-        if(cijfer1 <= 0 || cijfer1 > 100){
-            document.getElementById("uitkomst").style.color = 'red';
-            document.getElementById("uitkomst").innerHTML = 'this number is not valid';
+        cijfer2 = parseInt(cijfer2);
+
+        if(checkrules(cijfer1) || checkrules(cijfer2)){
+            tellItsNotAllowed();
         }else{
-            document.getElementById("uitkomst").innerHTML = "Het kwadraat is:"+ (cijfer1*cijfer1)
+            document.getElementById("uitkomst").innerHTML = "De getallen optellen is:"+ (cijfer1+cijfer2)
         }
 
+    }
+ 
+ 
+    function checkrules(cijfer1p){
+        return cijfer1p <= 0 || cijfer1p > 100;
+    }
+    function tellItsNotAllowed(){
+            document.getElementById("uitkomst").style.color = 'red';
+            document.getElementById("uitkomst").innerHTML = 'this number is not valid';
+    }
+    function resetAtStart(){
+        document.getElementById("uitkomst").style.color = 'black';
     }
 </script>
 
